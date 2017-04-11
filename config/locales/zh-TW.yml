@@ -1,0 +1,5 @@
+zh-TW:
+ hello: 世界你好
+ admin:
+   event: 活动管理
+   hello: "亲爱的%{title}你好!"

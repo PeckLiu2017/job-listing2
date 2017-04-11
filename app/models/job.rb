@@ -1,4 +1,7 @@
 class Job < ApplicationRecord
+
+  add_column :users, :avatar, :string
+
   validates :title, presence: true
 
  validates :wage_upper_bound, presence: true
