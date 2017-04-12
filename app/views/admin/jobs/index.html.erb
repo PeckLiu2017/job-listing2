@@ -22,10 +22,9 @@
       <% end %>
     </td>
     <td>
-      <%=  %>
+      <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %> </td>
 
-      <%= t('hello') %>
-      <%= job.created_at %>
+    
     </td>
   </tr>
   <% end %>
