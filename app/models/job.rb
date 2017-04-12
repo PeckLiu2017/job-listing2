@@ -1,8 +1,6 @@
 class Job < ApplicationRecord
 
-  add_column :users, :avatar, :string
-
-  validates :title, presence: true
+ validates :title, presence: true
 
  validates :wage_upper_bound, presence: true
  validates :wage_lower_bound, presence: true
@@ -17,4 +15,7 @@ class Job < ApplicationRecord
      self.is_hidden = true
      self.save
    end
+
+   has_many :resumes
+
 end
