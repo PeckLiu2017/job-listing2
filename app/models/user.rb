@@ -8,6 +8,8 @@ class User < ApplicationRecord
     is_admin
   end
 
-  has_many :resumes
+  mount_uploader :avatar, AttachmentUploader
 
+  has_many :resumes
+  has_many :jobs
 end

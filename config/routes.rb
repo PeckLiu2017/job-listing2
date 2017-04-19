@@ -15,6 +15,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :account do
+    resources :jobs
+  end
+
   resources :jobs do
     collection do
       get :search
