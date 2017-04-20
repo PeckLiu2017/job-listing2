@@ -1,0 +1,52 @@
+/*sign_up_form*/
+.sign_up_form {
+    width: 30%;
+    margin: 0 35%;
+    border: 5px solid #666;
+    border-radius: 25px;
+    margin-top: 7%;
+}
+
+.sign_up_form h2{
+  text-align: center;
+}
+
+.sign_up_form_margin{
+  margin: 5%;
+}
+
+.sign_up_form_radio span {
+  margin: 0 10%;
+}
+
+.sign_up_form_radio input[type="radio"]{
+  margin: 0 4px;
+}
+
+.sign_up_form .form-actions {
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+
+/*background*/
+.sign_up_background{
+  background: url("/images/login1.jpeg") ;
+  background-size: cover;
+  height: 750px;
+}
+
+/*switch_to_login_in*/
+.switch_to_login_in a{
+  color: black;
+  text-decoration: none;
+}
+
+.sign_up_form .switch_to_login_in {
+  text-align: center;
+}
+
+.sign_up_button{
+  width: 100%;
+  letter-spacing: 10px;
+}

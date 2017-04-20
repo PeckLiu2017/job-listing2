@@ -1,19 +1,25 @@
-<h2>Sign up</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.collection_radio_buttons :is_admin, [[true, 'HR'] ,[false, 'Candidate']], :first, :last %>
-
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="row sign_up_background">
+        <div class="sign_up_form ">
+          <div class="sign_up_form_margin">
+            <h2>结伴同行</h2>
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <div class="form-inputs">
+              <div class="sign_up_form_radio">
+                <%= f.collection_radio_buttons :is_admin, [[true, '活动组织者'] ,[false, '活动参与者']], :first, :last %>
+              </div>
+                <%= f.input :email, :label => false, placeholder: '请输入常用的邮箱地址', error:'用户名已存在或格式不正确',equired: true, autofocus: true %>
+                <%= f.input :username, :label => false, placeholder: '请输入昵称', error: '请输入昵称', required: true %>
+                <%= f.input :password, :label => false, placeholder: '请输入6-16位密码', error:'密码不符合要求',input_html: { maxlength: 16 },required: true %>
+                <%= f.input :password_confirmation, :label => false, placeholder: '确认密码', error: '请输入相同的密码', required: true, input_html: { maxlength: 16 } %>
+            </div>
+            <div class="form-actions">
+                <%= f.button :submit, "注册",class: "sign_up_button" %>
+            </div>
+            <hr />
+      <div class="switch_to_login_in">
+        <%= link_to "已是同伴?立即登录", new_session_path(resource_name) %>
+      </div>
+            <% end %>
+          </div>
+        </div>
+</div>
