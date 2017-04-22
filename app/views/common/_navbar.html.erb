@@ -1,45 +1,72 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class=" fix_nav">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">一起看看世界
-        </a>
-    </div>
+        <div class="nav-part">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">一起看看世界</a>
+        </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-            <li>
-                <div class="form-group form-inline search-bar">
-                    <%= render :partial => "jobs/search_bar" %>
-                </div>
-            </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <% if !current_user %>
-            <li><%= link_to("注册", new_user_registration_path) %> </li>
-            <li><%= link_to("登入", new_user_session_path) %></li>
-        <% else %>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    Hi!,
-                    <%= image_tag(gravatar_url(current_user), size:"20")%>
-                    <%= current_user.email %>
-                    <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li> <%= link_to("My Jobs", account_jobs_path) %></li>
-                    <% if current_user.admin? %>
-                    <li>
-                        <%= link_to("Admin Panel", admin_jobs_path) %>
-                    </li>
-                    <% end %>
-                    <li><%= link_to "个人中心", edit_user_registration_path %></li>
 
-                    <li>
-                        <%= link_to("Exit", destroy_user_session_path, method: :delete) %></li>
-                </ul>
-                <% end%>
-            </li>
-        </ul>
+          <div class="nav-right">
+            <ul class="nav-list">
+              <li>
+                  <div class="search-bar">
+                      <%= render :partial => "jobs/search_bar" %>
+                  </div>
+              </li>
+            </ul>
+          </div>
+
+
+            <div class="nav-part">
+            <ul class="nav-list">
+                <li>
+                    <a href="#home">HOME</a>
+                </li>
+                <li>
+                    <a href="#activity">户外活动</a>
+                </li>
+                <li>
+                    <a href="#share"> 分享</a>
+                </li>
+                <li><%= link_to("Get Started", new_user_registration_path) %>
+                </li>
+                <% if !current_user %>
+
+                <li><%= link_to("登入", new_user_session_path) %></li>
+            <% else %>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Hi!,
+                        <%= current_user.email %>
+
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                          <%= image_tag(gravatar_url(current_user), size:"20")%>
+                        </li>
+                        <li>
+                            <%= link_to("My Jobs", account_jobs_path) %>
+                        </li>
+                        <% if current_user.admin? %>
+                        <li>
+                            <%= link_to("Admin Panel", admin_jobs_path) %>
+                        </li>
+                        <% end %>
+                        <li>
+                            <%= link_to "个人中心", edit_user_registration_path %>
+                        </li>
+                        <li>
+                            <%= link_to("Exit", destroy_user_session_path, method: :delete) %>
+                        </li>
+                    </ul>
+                    <% end%>
+                </li>
+            </ul>
+          </div>
     </div>
-</div>
 </nav>

@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+$(document).ready(function() {
+  $('#1').hide();
+  $('#search-submit-btn').mouseover(function(){
+    $('#1').addClass("only-for-search-input");
+    $('#1').show();
+    // $('#search-submit-btn').hide();
+  });
+});

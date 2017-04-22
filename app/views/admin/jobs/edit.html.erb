@@ -4,10 +4,12 @@
 
 <%= f.input :title%>
 <%= f.input :description %>
-<%= f.input :wage_lower_bound, :label => "薪资下限" %>
-<%= f.input :wage_upper_bound, :label => "薪资上限" %>
+<%= f.input :wage_lower_bound, :label => "累计同行人数" %>
+<%= f.input :wage_upper_bound, :label => "参与人满意度" %>
 <%= f.input :contact_email %>
+<%= f.input :city %>
+<%= f.input :category%>
 <%= f.input :is_hidden %>
-<%= f.collection_radio_buttons :city, [['beijing', 'beijing'] ,['shanghai', 'shanghai']], :first, :last %>
+
   <%= f.submit "Submit" %>
 <% end %>

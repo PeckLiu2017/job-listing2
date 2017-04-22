@@ -1,61 +1,105 @@
-
-
-.navbar-default {
-    border:0;
-    margin-bottom: 0;
+.fix_nav{
+    top: 0;
+    border-width: 0 0 1px;
+    border-radius: 0;
+    position: fixed; //没有这条， 不设置 background的时候又会变成白色。
+    right: 0;
+    left: 0;
+    z-index: 100;
+    min-height: 50px;
+    background-color: transparent;
 }
 
-@media (min-width: 768px) {
-  .navbar {
-    border-radius: 0; //圆角为0
-  }
+.navbar-header{
+  width:33.3333333%;
+  border: 1px solid black
 }
 
-.navbar-default .navbar-brand {
-
-  padding: 10px 15px; //上下10px，左右15px
-  line-height: 30px; //文字行高
+.container-nav{
+  display: inline-block;
 }
 
-// .navbar-default .navbar-brand:hover,
-// .navbar-default .navbar-brand:focus {
-//   color: #FAFAFA; //鼠标放置在链接上的文字颜色
-//
-//   background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
-// }
 
-.navbar-default .navbar-nav > li > a{
-
+.nav-part{
+  float: left;
+  height: 50px;
 }
 
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
 
+.nav-list{
+  float: right !important;
+  margin-right: -15px;
+  margin: 0;
+  list-style: none;
+  content: " ";
+  display: table;
+  max-height: 50px;
+  display: block;
+}
+
+/*search*/
+.form-child{
+  height: 34px;
+}
+
+.search-submit-btn{
+  position: absolute;
   background-color: transparent;
 }
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #FF6F00;
 
-
+.only-for-search-input{
+  width: 100%;
+  background-color: transparent;
+  filter: alpha(opacity=0);
+  appearance:none;
+  transition: width 10s;
 }
 
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:focus,
-.navbar-default .navbar-nav > .open > a:hover {
+.search-form-control{
+  height: 34px;
 
-  color: #212121;
-
+  padding: 6px 12px;
+  position: relative;
+  display: table-cell;
 }
 
-.navbar-brand > img {
-  display: inline-block;
-  margin-right: 10px;
-  height: 32px;
-  width:32px;
+
+
+
+.search-bar-submit{
+  font-size: 14px;
+  color: #f1f1f1;
+  background-color: transparent;
+  height: 34px;
+  width: 34px;
+  padding: 6px;
 }
 
+.nav-list .row{
+  position: relative;
+  top:0;
+}
+
+.input-group{
+  margin-right: 20px;
+}
+/*search*/
+
+.nav-list > li{
+  float: left;
+  margin-top: 15px;// 在padding无用的时候只好设置这个。
+  list-style: none;
+}
+
+.nav-list a{
+  text-decoration: none;
+  padding: 15px;
+}
+
+.nav-list .search-bar{
+  position: relative;
+  top: -5px;
+}
 
 .form-group {
     margin-bottom: 10px;
