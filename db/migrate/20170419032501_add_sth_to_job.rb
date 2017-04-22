@@ -3,6 +3,6 @@ class AddSthToJob < ActiveRecord::Migration[5.0]
     add_column :jobs,:city,:string
     add_column :jobs,:company,:string
     add_column :jobs,:category,:string
-    add_column :jobs,:user_id,:string
+    add_column :jobs,:user_id,:integer
   end
 end

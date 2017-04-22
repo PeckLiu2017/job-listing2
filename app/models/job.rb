@@ -22,4 +22,7 @@ class Job < ApplicationRecord
 
    has_many :resumes
 
+   has_many :activity_relationships
+   has_many :members, through: :activity_relationships, source: :user
+
 end

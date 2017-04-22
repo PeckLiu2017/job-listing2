@@ -59,6 +59,34 @@ class JobsController < ApplicationController
     redirect_to jobs_path
   end
 
+
+  def unfavorite
+  @job = Job.find(params[:id])
+  if current_user.is_member_of?(@job)
+    current_user.unfavorite!(@job)
+    flash[:alert] = "You have already removed it form favorite list！"
+  else
+    flash[:warning] = "You didn't favorite it!"
+  end
+
+  redirect_to job_path(@job)
+end
+
+def favorite
+ @job = Job.find(params[:id])
+
+  if !current_user.is_member_of?(@job)
+    current_user.favorite!(@job)
+    flash[:notice] = "Favorite it success!"
+  else
+    flash[:warning] = "You have already favorited it!"
+  end
+
+  redirect_to job_path(@job)
+end
+
+
+
   protected
 
   def validate_search_key
