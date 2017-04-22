@@ -22,4 +22,7 @@ $(document).ready(function() {
     $('#1').show();
     // $('#search-submit-btn').hide();
   });
+    $("#gotop").click(function(){
+      $('body').animate({'scrollTop':0},500)
+    });
 });
