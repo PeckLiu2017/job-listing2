@@ -1,0 +1,139 @@
+//设置html布局和大小
+.post_container{
+  position: relative;
+  margin: 0 15%;
+
+}
+.test{
+  background-color: black;
+}
+
+.post_container:after {
+    content:"";       //after之后有内容
+    display: block;   //变成有内容的块，因为要用clear属性，而clear只对块起作用。
+    clear: both;      //再变回有内容的行
+}
+// left
+.new_post{
+  float: left;
+  width:90%;
+  margin: 0 auto;
+}
+// left
+// right
+.side_bar {
+  float: left;
+  width: 10%;
+  position: fixed;
+  top: 10%;
+  right: 10%;
+}
+
+.edit_bar{
+  margin: 20% 20%;
+}
+// right
+
+//left detail
+.post-header-input{
+height: 40px;
+color: inherit;
+font-size: 24.5px;
+line-height: 40px;
+font-weight: bold;
+text-rendering: optimizelegibility;
+width: 100%;
+background-color: transparent;
+border: 1px solid transparent;
+display: block;
+-moz-box-shadow: none;
+-webkit-box-shadow: none;
+box-shadow: none;
+-moz-transition: 100ms;
+-webkit-transition: 100ms;
+transition: 100ms;
+}
+
+.editor-body{
+  font-size: 24.5px;
+  font-weight: bold;
+}
+
+.new_post{
+  float: left;
+}
+//left detail
+
+//right detail
+  //
+.side_bar .edit-bar ul{
+  border-radius: 10%;
+}
+
+/*ul*/
+.edit-bar ul{
+  margin:0 auto ;
+
+}
+
+/*li*/
+.sidebar_button{
+  list-style: none;
+  text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+}
+/*a*/
+.edit_bar ul li a{
+  left: 20%;
+  top:200px;
+  width: 48px;
+  background-color: whitesmoke;
+  color: #666;
+  font-size: 24px;
+  line-height: 48px;
+  text-decoration: none;
+  text-shadow: 0 1px 1px #fff;
+  border: 1px solid rgba(0,0,0,0.05);
+  display: block;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.sidebar-button {
+    text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/*tooltiptext*/
+.tooltiptext{
+  visibility: hidden;
+  position: absolute;
+  right: 130%;
+  top: 20%;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  display: block;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.tooltiptext:after {
+    content: "";
+    position: absolute;
+    top: 30%;
+    right: -10px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent #555;
+}
+
+.sidebar_button:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+//right detail

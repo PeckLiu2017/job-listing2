@@ -8,7 +8,7 @@
     left: 0;
     z-index: 100;
     background-color: #2d2d30;
-    min-height: 50px;
+    max-height: 50px;
     border: 0;
     opacity: 0.9;
     margin: 0 auto; /*水平居中*/
@@ -72,16 +72,16 @@
     clear: both;
     float: left;
     height: 50px;
+    width:15%;
 }
 
 .nav-middle {
+    position: absolute;
+    margin-left: 15%;
     width: 40%;
     float: left;
 }
 
-.nav-right {
-    float: right;
-}
 
 .nav-list {
     float: left !important;
@@ -92,6 +92,11 @@
     display: block;
 }
 /*search*/
+
+.nav-right {
+    float: right;
+}
+
 .nav-search {
     float: right !important;
     margin: 0;

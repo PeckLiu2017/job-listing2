@@ -1,13 +1,57 @@
-<h1> Add a job </h1>
+<br><br><br><br>
+<div class="post_container">
+    <div class="new_post" >
+        <%= simple_form_for [:admin,@job] do |f| %>
 
-<%= simple_form_for [:admin,@job] do |f| %>
+        <%= f.input :title ,label:false,placeholder:'标题',input_html: { class:'post-header-input' } %>
+        <%= f.input :description ,label:false,placeholder:'正文',input_html:{class:'editor-body',:cols => 10, :rows => 40 }%>
+        <div class="test">
 
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :wage_lower_bound, :label => "薪资下限" %>
-<%= f.input :wage_upper_bound, :label => "薪资上限" %>
-<%= f.input :contact_email %>
-<%= f.input :is_hidden %>
+        <%= f.input :wage_lower_bound, label:false,placeholder:'预计参与人数' %>
+      </div>
 
-  <%= f.submit "Submit" %>
-<% end %>
+        <%= f.input :wage_upper_bound, label:false,placeholder:'最低参与人数' %>
+        <%= f.input :contact_email %>
+        <%= f.input :category, :label => "分类", :collection => ["一起去玩", "读书笔记","旅行日记", "音乐分享", "电影分享","其它"], :checked => @job.category, input_html: { class: 'category' } %>
+
+        <%= f.input :is_hidden %>
+
+        <%= f.submit "Submit" %>
+        <% end %>
+
+    </div>
+    <div class="side_bar">
+      <div class="edit_bar">
+        <ul>
+            <li class="sidebar_button">
+              <span class="tooltiptext">选择图片</span>
+                <a  href="#">
+                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="sidebar_button">
+              <span class="tooltiptext">预览</span>
+                <a href="#">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="sidebar_button">
+              <span class="tooltiptext">Tooltip text</span>
+                <a  href="#">
+                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="sidebar_button">
+                <a  href="#">
+                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="sidebar_button">
+                <a  href="#">
+                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+      </div>
+    </div>
+</div>

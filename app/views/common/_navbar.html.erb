@@ -1,29 +1,27 @@
 <nav class="fix-nav">
-        <div class="nav-left">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="nav-logo">
-              <a class="navbar-brand" href="/">一起看看世界</a>
-            </div>
+    <div class="nav-left">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="nav-logo">
+            <a class="navbar-brand" href="/">一起看看世界</a>
+        </div>
+    </div>
+
+    <div id="myNavbar">
+        <div class="nav-right">
+            <ul class="nav-search">
+                <li>
+                    <div class="search-bar">
+                        <%= render :partial => "jobs/search_bar" %>
+                    </div>
+                </li>
+            </ul>
         </div>
 
-<div  id="myNavbar">
-
-          <div class="nav-right">
-            <ul class="nav-search">
-              <li>
-                  <div class="search-bar">
-                      <%= render :partial => "jobs/search_bar" %>
-                  </div>
-              </li>
-            </ul>
-          </div>
-
-
-            <div class="nav-middle">
+        <div class="nav-middle">
             <ul class="nav-list">
                 <li>
                     <a href="#Home">HOME</a>
@@ -42,14 +40,13 @@
             <% else %>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Hi!,
-                        <%= current_user.email %>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
 
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li>
-                          <%= image_tag(gravatar_url(current_user), size:"20")%>
+                        <li style="padding-left:20px;font-size:15px;">
+                            <%= current_user.email%>
                         </li>
                         <li>
                             <%= link_to("My Jobs", account_jobs_path) %>
@@ -69,6 +66,6 @@
                     <% end%>
                 </li>
             </ul>
-          </div>
         </div>
+    </div>
 </nav>
