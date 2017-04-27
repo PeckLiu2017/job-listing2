@@ -16,13 +16,44 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $('#1').hide();
-  $('#search-submit-btn').mouseover(function(){
-    $('#1').addClass("only-for-search-input");
-    $('#1').show();
-    // $('#search-submit-btn').hide();
-  });
-    $("#gotop").click(function(){
-      $('body').animate({'scrollTop':0},500)
+    // search
+    $('#1').hide();
+    $('#search-submit-btn').mouseover(function() {
+        $('#1').addClass("only-for-search-input");
+        $('#1').show();
     });
+    // footer
+    $("footer").removeClass("fixed-bottom");
+    var contentHeight = document.body.scrollHeight; //网页正文全文高度
+    var winHeight = window.screen.height; //可视窗口高度，不包括浏览器顶部工具栏
+    if (contentHeight < winHeight) {
+        $("footer").addClass("fixed-bottom");
+    };
+    // $(this).css("background-color", "yellow");
+    $(".tabs-style-ul").children('li').each(function() {
+      $(this).click(function(){
+
+        $('.tab-current').children().removeClass('icon-box');
+        $('.tab-current').children().addClass('icon-display');
+        $('.tab-current').removeClass();
+
+
+        $(this).addClass('tab-current');
+        $(this).children().removeClass('icon-display');
+        $(this).children().addClass('icon-box');
+
+        var href = $(this).children().attr('href');
+        var str = "'"+ href + "'";
+        var resid = str.replace("#", "");
+        // if (window.console) {
+            // console.log(resid);
+        // }
+        // console.log(this);
+        var  id = 'section-bar-2';
+        $('.content-current').removeClass();
+        document.getElementById(eval(resid)).className='content-current';
+
+
+      })
+    })
 });

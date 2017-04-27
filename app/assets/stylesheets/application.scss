@@ -13,9 +13,6 @@
  *= require_tree .
  *= require_self
  */
-body html{
-  height: 100%;
-}
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -29,3 +26,13 @@ body html{
 @import "jobs";
 /*---------------------*/
 @import "newpost";
+
+body html{
+  position: relative;
+  height: 100%;
+  overflow: auto;
+}
+
+body{
+   margin-bottom: 150px;
+}

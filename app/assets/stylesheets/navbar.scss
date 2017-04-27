@@ -15,14 +15,26 @@
 
 }
 
-.nav-logo {
-    float: left;
-    margin: 0 0 0 20%;
-    width: 300px;
+.fix_button{
+  width: 100px;
+  height: 100px;
+  position: fixed;
+}
+
+// .nav-logo {
+//     float: left;
+//     margin: 0 0 0 20%;
+//     width: 300px;
+// }
+a.topnav-icons {
+  width: 52px;
+    font-size: 20px !important;
+    color: #fff !important;
 }
 
 .fix-nav li {
     padding-top: 15px;
+    display: inline-block;
 }
 
 .fix-nav a {
@@ -68,18 +80,17 @@
 
 
 
-.nav-left {
-    clear: both;
-    float: left;
-    height: 50px;
-    width:15%;
-}
+// .nav-left {
+//     clear: both;
+//     float: left;
+//     height: 50px;
+//     width:15%;
+// }
 
 .nav-middle {
     position: absolute;
-    margin-left: 15%;
-    width: 40%;
     float: left;
+    min-width: 700px;
 }
 
 
@@ -109,6 +120,7 @@
 
 .nav-search li{
   padding: 8px;
+  display: inline-block;
 }
 
 .form-child {
