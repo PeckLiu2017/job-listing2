@@ -1,21 +1,25 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-6">
+  <br>
+  <br>
+  <br>
+    <div class="row show-row">
+      <div class="show-left">
+
+      </div>
+        <div class="col-md-6 show-col-md-6">
             <% if @job.avatar.present? %>
             <%= image_tag(@job.avatar.url, :alt => @job.title)%>
         <% else %>
-            <%= image_tag(root_url + "images/No-image-available.jpg", :alt => "No-image-available")%>
+            <%= image_tag(root_url + "/images/nature-4.jpg", :alt => "No-image-available",size:"200")%>
             <% end %>
         </div>
 
-        <span class="pull-right">
+        <span class="pull-right show-right">
             <% if current_user && current_user.is_member_of?(@job)%>
-            <label class="label label-success">Already Favorited</label>
-            <%= link_to  unfavorite_job_path(@job), method: :post,  style: "color: red;" do %>
+            <%= link_to  unfavorite_job_path(@job), method: :post,  style: "color: black;" do %>
             <i class="fa fa-heart" aria-hidden="true"></i>
             <% end %>
         <% else %>
-            <label class="label label-warning">Favorite it?</label>
             <%= link_to  favorite_job_path(@job), method: :post  do %>
             <i class="fa fa-heart-o" aria-hidden="true"></i>
             <% end %>
@@ -25,6 +29,8 @@
 
         <div class="col-md-6">
             <div class="job-description">
+              <br>
+              <br>
                 <p>
                     <%= simple_format(@job.description) %>
 
@@ -33,6 +39,39 @@
         </div>
     </div>
 
+</div>
+
+<div class=" row ">
+  <div class="container">
+  <div class="job">
+    <% if current_user && current_user.is_member_of?(@job) %>
+    <%= link_to("Write a resume", new_job_resume_path(@job), class: "btn btn-default pull-left")%>
+    <% end %>
+    <% if current_user && current_user == @job.user %>
+    <%= link_to("Edit", edit_job_path(@job), class: "btn btn-primary pull-right")%>
+    <% end %>
+  </div>
+  <br>
+
+  <table class="table show-table">
+  <thead>
+   <tr>
+      <th>resume Content</th>
+      <th>Creator</th>
+      <th>Release Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @resumes.each do |resume| %>
+      <tr>
+        <td><%= simple_format(resume.content) %></td>
+        <td><%= resume.user.email %></td>
+        <td><%= resume.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
 </div>
 
 <div class="text-center">

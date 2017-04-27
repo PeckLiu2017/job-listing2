@@ -26,13 +26,12 @@
 @import "jobs";
 /*---------------------*/
 @import "newpost";
+@import "show";
 
+
+/*for_footer*/
 body html{
   position: relative;
   height: 100%;
   overflow: auto;
-}
-
-body{
-   margin-bottom: 150px;
 }

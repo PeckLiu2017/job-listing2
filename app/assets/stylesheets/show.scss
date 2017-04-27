@@ -1,0 +1,26 @@
+.show-row{
+  border: 1px solid;
+  border-radius: 3px;
+}
+
+.show-right{
+  margin: 15px;
+  display: block;
+}
+
+.show-col-md-6{
+ padding: 15px;
+ width: 35%;
+}
+
+.show-col-md-6 img{
+ width:300px;
+}
+
+.show-table {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+}

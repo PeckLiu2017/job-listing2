@@ -25,8 +25,12 @@ $(document).ready(function() {
     // footer
     $("footer").removeClass("fixed-bottom");
     var contentHeight = document.body.scrollHeight; //网页正文全文高度
-    var winHeight = window.screen.height; //可视窗口高度，不包括浏览器顶部工具栏
-    if (contentHeight < winHeight) {
+    var winHeight = window.innerHeight; //可视窗口高度，不包括浏览器顶部工具栏
+    if (window.console) {
+        console.log(contentHeight);
+        console.log(winHeight);
+    }
+    if (contentHeight <= winHeight) {
         $("footer").addClass("fixed-bottom");
     };
     // $(this).css("background-color", "yellow");
@@ -49,7 +53,7 @@ $(document).ready(function() {
             // console.log(resid);
         // }
         // console.log(this);
-        var  id = 'section-bar-2';
+        // var  id = 'section-bar-2';
         $('.content-current').removeClass();
         document.getElementById(eval(resid)).className='content-current';
 

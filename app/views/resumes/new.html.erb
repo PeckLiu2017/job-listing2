@@ -1,7 +1,11 @@
 <h3> 投交履历到 <%= @job.title %> </h3>
 
 <hr>
-
+<div class=" editor_iframe_container" style="width: 100%;">
+    <iframe id="blogContent_Iframe"
+    srcdoc="<p>Hello world!</p>">
+    </iframe>
+</div>
 <%= simple_form_for [@job, @resume] do |f| %>
   <%= f.input :content %>
   <%= f.input :attachment %>

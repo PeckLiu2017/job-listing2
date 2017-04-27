@@ -12,11 +12,12 @@
         Opps! No any results matched, please try again.
       </div>
     <% else %>
-      <h3>Total find <%= @jobs.count %> jobs</h3>
+      <h3 style="text-align:left;">Total find <%= @jobs.count %> jobs</h3>
       <div class="divider"></div>
       <%= render :partial => "jobs_item", :collection => @jobs, :as => :job %>
       <div class="text-center">
         <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+        <br>
       </div>
     <% end %>
   </div>
