@@ -908,6 +908,7 @@ section.cd-section {
     float: left;
     overflow: hidden;
     text-align: center;
+    margin: 0;
     width: 100%
 }
 
@@ -915,11 +916,16 @@ section.cd-section {
     background-color: #000
 }
 
+.effect-bubba{
+  float: left;
+}
+
 .gallery-grids figure img {
     position: relative;
     display: block;
     width: 100%;
-    border: 3px solid #C7C7C7
+    border: 3px solid #C7C7C7;
+      clear:both;
 }
 
 .gallery-bottom {

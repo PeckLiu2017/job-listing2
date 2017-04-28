@@ -5,17 +5,17 @@
 
         <%= f.input :title ,label:false,placeholder:'标题',input_html: { class:'post-header-input' } %>
         <%= f.input :description ,label:false,placeholder:'正文',input_html:{class:'editor-body',:cols => 10, :rows => 10 }%>
-<div class="post-contest-iframe">
+<!-- <div class="post-contest-iframe">
   <iframe src="https://www.w3schools.com">
   <p>Your browser does not support iframes.</p>
 </iframe>
-</div>
+</div> -->
         <%= f.input :wage_lower_bound, label:false,placeholder:'预计参与人数' %>
 
 
         <%= f.input :wage_upper_bound, label:false,placeholder:'最低参与人数' %>
         <%= f.input :contact_email %>
-        <%= f.input :category, :label => "分类", :collection => ["一起去玩", "读书笔记","旅行日记", "音乐分享", "电影分享","其它"], :checked => @job.category, input_html: { class: 'category' } %>
+        <%= f.input :category %>
 
         <%= f.input :is_hidden %>
 
