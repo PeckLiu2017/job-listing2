@@ -4,11 +4,11 @@
         <div class="row">
             <ul class="w3-ul w3-card-4">
                 <li class="w3-padding-16">
-                  <p><%= link_to(job.title, job_path(job)) %>&nbsp;⬅️&nbsp;click here to do more</p>
+                  <p class="w3-large"><%= link_to(job.title, job_path(job)) %>&nbsp;⬅️&nbsp;click here to do more</p>
                     <!-- <span onclick="this.parentElement.style.display='none'" class="w3-button w3-white w3-xlarge w3-right">×</span> -->
                     <img src="/images/img_avatar2.png" class="w3-left w3-circle w3-margin-right" style="width:50px">
                     <span>Review</span><br>
-                    <span class="w3-large"><%= job.description%></span>
+                    <span ><%= job.description%></span>
                 </li>
             </ul>
         </div>
