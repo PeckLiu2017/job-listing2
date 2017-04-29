@@ -1,6 +1,80 @@
-<h1> <%= @job.title %> </h1>
+<div class="container">
+  <br>
+  <br>
+  <br>
+  <br>
+    <div class="row show-row">
+      <div class="show-left">
 
-<p>
-  <%= simple_format(@job.description) %>
+      </div>
+        <div class="col-md-6 show-col-md-6">
+            <% if @job.picture.present? %>
+            <%= image_tag(@job.picture.url, :alt => @job.title)%>
+        <% else %>
+            <%= image_tag(root_url + "/images/nature-4.jpg", :alt => "No-image-available",size:"200")%>
+            <% end %>
+        </div>
 
-</p>
+        <span class="pull-right show-right">
+            <% if current_user && current_user.is_member_of?(@job)%>
+            <%= link_to  unfavorite_job_path(@job), method: :post,  style: "color: black;" do %>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <% end %>
+        <% else %>
+            <%= link_to  favorite_job_path(@job), method: :post  do %>
+            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <% end %>
+            <% end %>
+        </span>
+
+
+        <div class="col-md-6">
+            <div class="job-description">
+              <br>
+              <br>
+                <p>
+                    <%= simple_format(@job.description) %>
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="container">
+  <div class="job">
+    <% if current_user && current_user.is_member_of?(@job) %>
+    <%= link_to("Write a resume after favorite it", new_job_resume_path(@job), class: "btn btn-default pull-left")%>
+    <% end %>
+    <% if current_user && current_user == @job.user %>
+    <%= link_to("Edit", edit_job_path(@job), class: "btn btn-primary pull-right")%>
+    <% end %>
+  </div>
+
+  <table class="table show-table">
+  <thead>
+   <tr>
+      <th>Resume Content</th>
+      <th>Creator</th>
+      <th>Release Time</th>
+      <th>Operate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @resumes.each do |resume| %>
+      <tr>
+        <td><%= simple_format(resume.content) %></td>
+        <td><%= resume.user.email %></td>
+        <td><%= resume.created_at %></td>
+        <td><%= link_to "Edit" ,edit_job_resume_path(resume.job,resume)%>
+           |<%= link_to "Destory",job_resume_path(resume.job, resume),:method=>:delete,:data=>{confirm:"Are you sure?"}%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>

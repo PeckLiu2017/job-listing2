@@ -3,13 +3,19 @@
         <h1>
             Edit a picture
         </h1>
-        <%= simple_form_for @job do |f| %>
-        <%= f.input :title %>
-        <%= f.input :description %>
-        <%= f.input :contact_email %>
+        <%= simple_form_for [:admin, @job ] do |f|  %>
+
+        <%= f.input :title,label:false,placeholder:'title'%>
+        <%= f.input :description,label:false,placeholder:'description',:autofocus => true,input_html:{cols:10,rows:10} %>
+        <%= f.input :category,label:false,placeholder:'category' %>
         <%= f.input :is_hidden %>
-        <%= f.input :picture %>
-        <%= f.submit "Submit",class:"btn btn-default" %>
+        <div >
+          <a href="javascript:;" class="a-upload">
+          <input class="file optional btn btn-default" placeholder="picture" type="file" name="job[picture]" id="job_picture">点击这里上传文件
+          </a>
+          <br>
+          <%= f.submit "Submit" ,class:"btn btn-default pull-right" %>
+        </div>
         <% end %>
     </div>
 </div>
