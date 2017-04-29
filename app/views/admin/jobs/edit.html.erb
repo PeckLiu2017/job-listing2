@@ -1,18 +1,19 @@
 <br><br><br>
 <div class="post_container">
-  <h1> Edit a job </h1>
+    <div class="new_post">
+  <h1> Edit a picture </h1>
 
-  <%= simple_form_for [:admin, @job ] do |f| %>
+  <%= simple_form_for [:admin, @job ] do |f|  %>
 
-  <%= f.input :title%>
-  <%= f.input :description %>
-  <%= f.input :wage_lower_bound, :label => "累计同行人数" %>
-  <%= f.input :wage_upper_bound, :label => "参与人满意度" %>
-  <%= f.input :contact_email %>
-  <%= f.input :city %>
-  <%= f.input :category%>
+  <%= f.input :title,label:false,placeholder:'title'%>
+  <%= f.input :description,label:false,placeholder:'description',:autofocus => true,input_html:{cols:10,rows:10} %>
+  <%= f.input :category,label:false,placeholder:'category' %>
   <%= f.input :is_hidden %>
-  <%= f.input :picture %>
-    <%= f.submit "Submit" %>
+  <a href="javascript:;" class="a-upload">
+  <input class="file optional btn btn-default" placeholder="picture" type="file" name="job[picture]" id="job_picture">点击这里上传文件
+  </a>
+  <br>
+  <%= f.submit "Submit" ,class:"btn btn-default" %>
   <% end %>
+  </div>
 </div>

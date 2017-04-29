@@ -7,8 +7,8 @@
 
       </div>
         <div class="col-md-6 show-col-md-6">
-            <% if @job.avatar.present? %>
-            <%= image_tag(@job.avatar.url, :alt => @job.title)%>
+            <% if @job.picture.present? %>
+            <%= image_tag(@job.picture.url, :alt => @job.title)%>
         <% else %>
             <%= image_tag(root_url + "/images/nature-4.jpg", :alt => "No-image-available",size:"200")%>
             <% end %>
@@ -40,25 +40,26 @@
     </div>
 
 </div>
-
-<div class=" row ">
+<br>
+<br>
+<div class="row">
   <div class="container">
   <div class="job">
     <% if current_user && current_user.is_member_of?(@job) %>
-    <%= link_to("Write a resume", new_job_resume_path(@job), class: "btn btn-default pull-left")%>
+    <%= link_to("Write a resume after favorite it", new_job_resume_path(@job), class: "btn btn-default pull-left")%>
     <% end %>
     <% if current_user && current_user == @job.user %>
     <%= link_to("Edit", edit_job_path(@job), class: "btn btn-primary pull-right")%>
     <% end %>
   </div>
-  <br>
 
   <table class="table show-table">
   <thead>
    <tr>
-      <th>resume Content</th>
+      <th>Resume Content</th>
       <th>Creator</th>
       <th>Release Time</th>
+      <th>Operate</th>
     </tr>
   </thead>
   <tbody>
@@ -67,13 +68,12 @@
         <td><%= simple_format(resume.content) %></td>
         <td><%= resume.user.email %></td>
         <td><%= resume.created_at %></td>
+        <td><%= link_to "Edit" ,edit_job_resume_path(resume.job,resume)%>
+           |<%= link_to "Destory",job_resume_path(resume.job, resume),:method=>:delete,:data=>{confirm:"Are you sure?"}%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
-</div>
-
-<div class="text-center">
-    <%= link_to("投交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %>
 </div>

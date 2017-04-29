@@ -34,7 +34,7 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-
+<hr>
 <div class="portfolio" id="portfolio">
     <h3>Collection</h3>
 
@@ -79,7 +79,7 @@
                             <% if job.picture.present? %>
                             <img src=<%= job.picture.url %> alt="" class="img-responsive">
                             <figcaption>
-                                <h4>COLLECTIONS1</h4>
+                                <h4>VIEW MORE</h4>
                             </figcaption>
                         <% else %>
                             <%= image_tag(root_url + "images/No-image-available.jpg", :alt => "No-image-available")%>
@@ -106,7 +106,7 @@
                             <% if job.picture.present? %>
                             <img src=<%= job.picture.url %> alt="" class="img-responsive" style="display:inline-block"/>
                             <figcaption>
-                                <h4>COLLECTIONS1</h4>
+                                <h4>VIEW MORE</h4>
                             </figcaption>
                         <% else %>
                             <%= image_tag(root_url + "images/No-image-available.jpg", :alt => "No-image-available")%>
@@ -123,199 +123,55 @@
 
             <!-- Tab-3 -->
             <section id="section-bar-3" class="agileits w3layouts">
-                <h4>COLLECTIONS3</h4>
-                <div class="gallery-grids">
-                    <div class="col-md-4 col-sm-4 gallery-top">
-                        <a href="images/nature-1.jpg" class="swipebox">
-                            <figure class="effect-bubba">
-                                <img src="images/movie-1.jpg" alt="" class="img-responsive">
-                                <figcaption>
-                                    <h4>MOVIE</h4>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-4 gallery-top">
-                        <a href="images/movie-2.jpg" class="swipebox">
-                            <figure class="effect-bubba">
-                                <img src="images/movie-2.jpg" alt="" class="img-responsive">
-                                <figcaption>
-                                    <h4>MOVIE</h4>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-4 gallery-top">
-                        <a href="images/nature-3.jpg" class="swipebox">
-                            <figure class="effect-bubba">
-                                <img src="images/nature-3.jpg" alt="" class="img-responsive">
-                                <figcaption>
-                                    <h4>MOVIE</h4>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-4 gallery-top">
-                        <a href="images/nature-4.jpg" class="swipebox">
-                            <figure class="effect-bubba">
-                                <img src="images/nature-4.jpg" alt="" class="img-responsive">
-                                <figcaption>
-                                    <h4>MOVIE</h4>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-4 gallery-top">
-                        <a href="images/nature-5.jpg" class="swipebox">
-                            <figure class="effect-bubba">
-                                <img src="images/nature-5.jpg" alt="" class="img-responsive">
-                                <figcaption>
-                                    <h4>MOVIE</h4>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-4 gallery-top">
-                        <a href="images/nature-6.jpg" class="swipebox">
-                            <figure class="effect-bubba">
-                                <img src="images/nature-6.jpg" alt="" class="img-responsive">
-                                <figcaption>
-                                    <h4>MOVIE</h4>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-4 gallery-top">
-                        <a href="images/nature-7.jpg" class="swipebox">
-                            <figure class="effect-bubba">
-                                <img src="images/nature-7.jpg" alt="" class="img-responsive">
-                                <figcaption>
-                                    <h4>MOVIE</h4>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-4 gallery-top">
-                        <a href="images/nature-8.jpg" class="swipebox">
-                            <figure class="effect-bubba">
-                                <img src="images/nature-8.jpg" alt="" class="img-responsive">
-                                <figcaption>
-                                    <h4>MOVIE</h4>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-4 gallery-top">
-                        <a href="images/nature-9.jpg" class="swipebox">
-                            <figure class="effect-bubba">
-                                <img src="images/nature-9.jpg" alt="" class="img-responsive">
-                                <figcaption>
-                                    <h4>MOVIE</h4>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
+              <h4>COLLECTIONS3</h4>
+              <div class="gallery-grids">
+                  <% @jobs.each do |job|%>
+                  <div class="col-md-4 col-sm-4 gallery-top">
+                      <% if job.category == "1"%>
+                      <%= link_to job_path(job),class:"swipebox" do %>
+                      <figure class="effect-bubba">
+                          <% if job.picture.present? %>
+                          <img src=<%= job.picture.url %> alt="" class="img-responsive">
+                          <figcaption>
+                              <h4>VIEW MORE</h4>
+                          </figcaption>
+                      <% else %>
+                          <%= image_tag(root_url + "images/No-image-available.jpg", :alt => "No-image-available")%>
+                          <% end %>
+                      </figure>
+                      <% end %>
+                      <% end %>
+                  </div>
+                  <% end %>
+                  <div class="clearfix"></div>
+              </div>
             </section>
             <!-- //Tab-3 -->
 
             <!-- Tab-4 -->
             <section id="section-bar-4" class="agileits w3layouts">
-                <h4>HUMANITARIANISM</h4>
-                <div class="gallery-grids">
-                    <div class="col-md-4 col-sm-4 gallery-top">
-                        <a href="images/model-1.jpg" class="swipebox">
-                            <figure class="effect-bubba">
-                                <img src="images/model-1.jpg" alt="" class="img-responsive">
-                                <figcaption>
-                                    <h4>HUMANITARIANISM</h4>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-4 gallery-top">
-                        <a href="images/model-2.jpg" class="swipebox">
-                            <figure class="effect-bubba">
-                                <img src="images/model-2.jpg" alt="" class="img-responsive">
-                                <figcaption>
-                                    <h4>HUMANITARIANISM</h4>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-4 gallery-top">
-                        <a href="images/model-3.jpg" class="swipebox">
-                            <figure class="effect-bubba">
-                                <img src="images/model-3.jpg" alt="" class="img-responsive">
-                                <figcaption>
-                                    <h4>HUMANITARIANISM</h4>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-4 gallery-top">
-                        <a href="images/model-4.jpg" class="swipebox">
-                            <figure class="effect-bubba">
-                                <img src="images/model-4.jpg" alt="" class="img-responsive">
-                                <figcaption>
-                                    <h4>HUMANITARIANISM</h4>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-4 gallery-top">
-                        <a href="images/model-5.jpg" class="swipebox">
-                            <figure class="effect-bubba">
-                                <img src="images/model-5.jpg" alt="" class="img-responsive">
-                                <figcaption>
-                                    <h4>HUMANITARIANISM</h4>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-4 gallery-top">
-                        <a href="images/model-6.jpg" class="swipebox">
-                            <figure class="effect-bubba">
-                                <img src="images/model-6.jpg" alt="" class="img-responsive">
-                                <figcaption>
-                                    <h4>HUMANITARIANISM</h4>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-4 gallery-top">
-                        <a href="images/model-7.jpg" class="swipebox">
-                            <figure class="effect-bubba">
-                                <img src="images/model-7.jpg" alt="" class="img-responsive">
-                                <figcaption>
-                                    <h4>HUMANITARIANISM</h4>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-4 gallery-top">
-                        <a href="images/model-8.jpg" class="swipebox">
-                            <figure class="effect-bubba">
-                                <img src="images/model-8.jpg" alt="" class="img-responsive">
-                                <figcaption>
-                                    <h4>HUMANITARIANISM</h4>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-4 gallery-top">
-                        <a href="images/model-9.jpg" class="swipebox">
-                            <figure class="effect-bubba">
-                                <img src="images/model-9.jpg" alt="" class="img-responsive">
-                                <figcaption>
-                                    <h4>HUMANITARIANISM</h4>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
+              <h4>COLLECTIONS4</h4>
+              <div class="gallery-grids">
+                  <% @jobs.each do |job|%>
+                  <div class="col-md-4 col-sm-4 gallery-top">
+                      <% if job.category == "1"%>
+                      <%= link_to job_path(job),class:"swipebox" do %>
+                      <figure class="effect-bubba">
+                          <% if job.picture.present? %>
+                          <img src=<%= job.picture.url %> alt="" class="img-responsive">
+                          <figcaption>
+                              <h4>VIEW MORE</h4>
+                          </figcaption>
+                      <% else %>
+                          <%= image_tag(root_url + "images/No-image-available.jpg", :alt => "No-image-available")%>
+                          <% end %>
+                      </figure>
+                      <% end %>
+                      <% end %>
+                  </div>
+                  <% end %>
+                  <div class="clearfix"></div>
+              </div>
             </section>
             <!-- //Tab-4 -->
 
@@ -324,3 +180,54 @@
     </div>
     <!-- //Tabs -->
 </div>
+<!-- collections -->
+<hr>
+<article id="About"class="container">
+  <h2>hope this kind of beauty to be forever</h2>
+  <h2>Hepburn's word:</h2>
+<p>As you grow older, you will discover that you have two hands, one for helping yourself, the other for helping others.</p>
+<p>随着你的成长，你会发现你的两只手中一只手是自助的，另一只是来帮助他人的。</p>
+<br>
+<p>For beautiful eyes, look for the good in others; for beautiful lips, speak only words of kindness; and for poise, walk with the knowledge that you are never alone.</p>
+<p>美丽的眼睛能发现他人身上的美德，美丽的嘴唇只会说出善言，美丽的姿态能与知识并行，这样就永不孤单。</p>
+<br>
+<p>I believe in manicures. I believe in overdressing. I believe in primping at leisure and wearing lipstick. I believe in pink. I believe happy girls are the prettiest girls. I believe that tomorrow is another day, and... I believe in miracles.</p>
+<p>我喜欢修指甲，我喜欢打扮，我喜欢哪怕在闲暇时也涂唇膏穿盛装，我喜欢粉色。我相信快乐的女孩最漂亮。我相信明天的太阳是新的……我相信奇迹的存在。</p>
+<br>
+<p>I decided, very early on, just to accept life unconditionally; I never expected it to do anything special for me, yet I seemed to accomplish far more than I had ever hoped. Most of the time it just happened to me without my ever seeking it.</p>
+<p>我在很早之前就决定要无条件接受生活。我从来没有期望任何特别的事情发生，但我获得的总远远超过我的期望。但大部分时候，发生在我身上的事我都没有刻意追寻。</p>
+<br>
+<p>I have to be alone very often. I'd be quite happy if I spent from Saturday night until Monday morning alone in my apartment. That's how I refuel.</p>
+<p>我经常独自一人。如果整个周末我都是在公寓度过我也会很开心。这是我充电的过程。</p>
+<br>
+<p>I heard a definition once: Happiness is health and a short memory! I wish I'd invented it, because it is very true. </p>
+<p>我曾听说过这样一个说法：快乐就是拥有健康和短暂的记忆。我多么希望这是我发明的，因为说得太对了。</p>
+<br>
+<p>I was asked to act when I couldn't act. I was asked to sing 'Funny Face' when I couldn't sing, and dance with Fred Astaire when I couldn't dance - and do all kinds of things I wasn't prepared for. Then I tried like mad to cope with it.</p>
+<p>当还不会演戏时我被叫去演戏，当还不会唱歌时我被要求唱“Funny Face”，当还不会跳舞时我被要求与弗雷德·阿斯坦跳舞——所有的这些的事我都从来没有准备过。所以我非常努力地去适应学习这些事物。</p>
+<br>
+<p>I was born with an enormous need for affection, and a terrible need to give it. </p>
+<p>我自出生就有被爱的需求，而且还有个更强烈的需求——给予爱。</p>
+<br>
+<p>I've been lucky. Opportunities don't often come along. So, when they do, you have to grab them. </p>
+<p>我一直都很幸运。机遇很少凭空出现。所以，当它们出现时，你一定要抓住。</p>
+<br>
+<p>If I'm honest I have to tell you I still read fairy-tales and I like them best of all. </p>
+<p>如果够真诚我应该告诉你，我现在依然阅读童话，而且它们是我最爱的读物。</p>
+<br>
+<p>If my world were to cave in tomorrow, I would look back on all the pleasures, excitements and worthwhilenesses I have been lucky enough to have had. Not the sadness, not my miscarriages or my father leaving home, but the joy of everything else. It will have been enough.</p>
+<p>如果我的世界明天消逝，我会回顾所有我有幸拥有的快乐，兴奋和精彩。不是悲伤，失败或者我父亲的离家而去，而是所有事物愉快的一面，这样就足够了。</p>
+<br>
+<p>Living is like tearing through a museum. Not until later do you really start absorbing what you saw, thinking about it, looking it up in a book, and remembering - because you can't take it in all at once. </p>
+<p>生活就像在博物馆里走过场，要过一阵子你才开始吸收你的所见，思考它们，读书了解它们，记忆它们——因为你不能一下子全部消化。</p>
+<br>
+<p>People, even more than things, have to be restored, renewed, revived, reclaimed, and redeemed; never throw out anyone. </p>
+<p>人比事物更需要重建，刷新，复兴，回收和救赎；永远不要抛弃任何人。</p>
+<br>
+<p>Pick the day. Enjoy it - to the hilt. The past, I think, has helped me appreciate the present - and I don't want to spoil any of it by fretting about the future.</p>
+<p>选择一天，好好地享受——直到极致。我认为过去的经历能帮助我享受现在，我不愿浪费当下的任何一点去为未来苦恼。</p>
+<br>
+<p>The beauty of a woman is not in a facial mode but the true beauty in a woman is reflected in her soul. It is the caring that she lovingly gives the passion that she shows. The beauty of a woman grows with the passing years. </p>
+<p>女人之美不在五官而在其内心折射的真美。这就是她给出的关爱和她表现的热情。女人的这种美是随着岁月流逝而增长的。</p>
+
+</article>
