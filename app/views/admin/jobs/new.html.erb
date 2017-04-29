@@ -1,29 +1,19 @@
 <br><br><br><br>
 <div class="post_container">
-    <div class="new_post" >
-        <%= simple_form_for [:admin,@job] do |f| %>
-
-        <%= f.input :title ,label:false,placeholder:'标题',input_html: { class:'post-header-input' } %>
-        <%= f.input :description ,label:false,placeholder:'正文',input_html:{class:'editor-body',:cols => 10, :rows => 10 }%>
-<!-- <div class="post-contest-iframe">
-  <iframe src="https://www.w3schools.com">
-  <p>Your browser does not support iframes.</p>
-</iframe>
-</div> -->
-        <%= f.input :wage_lower_bound, label:false,placeholder:'预计参与人数' %>
-
-
-        <%= f.input :wage_upper_bound, label:false,placeholder:'最低参与人数' %>
-        <%= f.input :contact_email %>
-        <%= f.input :category %>
-
-        <%= f.input :is_hidden %>
-
-        <%= f.submit "Submit" %>
-        <% end %>
-
-    </div>
-    <div class="side_bar">
+  <div class="new_post">
+      <h1>
+          Edit a picture
+      </h1>
+      <%= simple_form_for @job do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :contact_email %>
+      <%= f.input :is_hidden %>
+      <%= f.input :picture %>
+      <%= f.submit "Submit",class:"btn btn-default" %>
+      <% end %>
+  </div>
+    <!-- <div class="side_bar">
       <div class="edit_bar">
         <ul>
             <li class="sidebar_button">
@@ -56,5 +46,5 @@
             </li>
         </ul>
       </div>
-    </div>
+    </div> -->
 </div>

@@ -78,12 +78,12 @@
                         <figure class="effect-bubba">
                             <% if job.picture.present? %>
                             <img src=<%= job.picture.url %> alt="" class="img-responsive">
+                            <% else %>
+                            <img src="http://ww2.sinaimg.cn/large/006tNbRwgy1ff3l6fmcwij30nm0f0myi.jpg" alt="alternative pic">
+                            <% end %>
                             <figcaption>
                                 <h4>VIEW MORE</h4>
                             </figcaption>
-                        <% else %>
-                            <%= image_tag(root_url + "images/No-image-available.jpg", :alt => "No-image-available")%>
-                            <% end %>
                         </figure>
                         <% end %>
                         <% end %>
@@ -104,13 +104,13 @@
                         <%= link_to job_path(job),class:"swipebox" do %>
                         <figure class="effect-bubba">
                             <% if job.picture.present? %>
-                            <img src=<%= job.picture.url %> alt="" class="img-responsive" style="display:inline-block"/>
+                            <img src=<%= job.picture.url %> alt="" class="img-responsive">
+                            <% else %>
+                            <img src="http://ww2.sinaimg.cn/large/006tNbRwgy1ff3l6fmcwij30nm0f0myi.jpg" alt="alternative pic">
+                            <% end %>
                             <figcaption>
                                 <h4>VIEW MORE</h4>
                             </figcaption>
-                        <% else %>
-                            <%= image_tag(root_url + "images/No-image-available.jpg", :alt => "No-image-available")%>
-                            <% end %>
                         </figure>
                         <% end %>
                         <% end %>
@@ -132,12 +132,12 @@
                       <figure class="effect-bubba">
                           <% if job.picture.present? %>
                           <img src=<%= job.picture.url %> alt="" class="img-responsive">
+                          <% else %>
+                          <img src="http://ww2.sinaimg.cn/large/006tNbRwgy1ff3l6fmcwij30nm0f0myi.jpg" alt="alternative pic">
+                          <% end %>
                           <figcaption>
                               <h4>VIEW MORE</h4>
                           </figcaption>
-                      <% else %>
-                          <%= image_tag(root_url + "images/No-image-available.jpg", :alt => "No-image-available")%>
-                          <% end %>
                       </figure>
                       <% end %>
                       <% end %>
@@ -159,12 +159,12 @@
                       <figure class="effect-bubba">
                           <% if job.picture.present? %>
                           <img src=<%= job.picture.url %> alt="" class="img-responsive">
+                          <% else %>
+                          <img src="http://ww2.sinaimg.cn/large/006tNbRwgy1ff3l6fmcwij30nm0f0myi.jpg" alt="alternative pic">
+                          <% end %>
                           <figcaption>
                               <h4>VIEW MORE</h4>
                           </figcaption>
-                      <% else %>
-                          <%= image_tag(root_url + "images/No-image-available.jpg", :alt => "No-image-available")%>
-                          <% end %>
                       </figure>
                       <% end %>
                       <% end %>
